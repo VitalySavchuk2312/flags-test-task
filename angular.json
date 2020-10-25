@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "flags-project"
+    }
+  },
+  "defaultProject": "flags-project",
+  "cli": {
+    "analytics": "f7384bf4-b776-428e-a9c5-a59f0003bf2a"
+  }
 }

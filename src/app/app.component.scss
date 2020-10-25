@@ -1,0 +1,48 @@
+/*----------------------------------------------------------------
+                          GENERAL STYLES
+----------------------------------------------------------------*/
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*----------------------------------------------------------------
+                          COMPONENT STYLES
+----------------------------------------------------------------*/
+.wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+  width: 300px;
+}
+
+.girl-image {
+  position: absolute;
+  width: 300px;
+  border-radius: 100%;
+  z-index: 0;
+}
+
+.flags-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flag-item {
+  cursor: pointer;
+  & > img {
+    width: 50px;
+    transition: 0.3s;
+  }
+  &:hover {
+    & > img {
+      filter: brightness(50%);
+    }
+  }
+}
