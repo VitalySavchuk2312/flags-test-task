@@ -56,16 +56,21 @@ export class AppComponent {
 
   removeFlag(flag, index) {
     let removedFlagOffsetX = flag.offsetX;
-    let temp: number;
     this.flagsArr = this.flagsArr.filter(item => item !== flag);
+    let temp;
     for (let i = index; i < this.flagsArr.length; i++) {
-      temp = this.flagsArr[i].offsetX;
+      const currentFlag = this.flagsArr[i];
+      const nextFlag = this.flagsArr[i + 1];
       if (i === index) {
         // first iteration
-        this.flagsArr[i].offsetX = removedFlagOffsetX;
+        temp = currentFlag.offsetX;
+        currentFlag.offsetX = removedFlagOffsetX;
         continue;
       }
-      this.flagsArr[i].offsetX = temp;
+      if (nextFlag) {
+        currentFlag.offsetX = temp;
+        temp = nextFlag.offsetX;
+      }
     }
   }
  
