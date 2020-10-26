@@ -5,7 +5,7 @@
       class="flag-item" 
       *ngFor="let flag of flagsArr; let i = index" 
       (click)="removeFlag(flag, i)" 
-      [style.transform]="'translateX('+flag.offsetX+'px)'"
+      [style.transform]="'translate('+flag.offsetX+'px,'+flag.offsetY+'px)'"
     >
       <img [src]="flag.src" alt="">
     </li>
