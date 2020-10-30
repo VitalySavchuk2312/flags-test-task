@@ -8,58 +8,45 @@ import { faStarHalf } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'flags-project';
   heading = 'Cristofer Carder Junior';
   faStar = faStar;
   faStarHalf = faStarHalf;
-  rightOffset = 0;
-  topOffset = 0;
-  appropriateElementIndex = 2;
   flagsArr = [
     {
       src: './assets/flags/flag1.png',
-      offsetX: 0,
-      offsetY: 0,
+      offsetX: 0
     },
     {
       src: './assets/flags/flag2.png',
-      offsetX: 30,
-      offsetY: 0,
+      offsetX: -30
     },
     {
       src: './assets/flags/flag3.png',
-      offsetX: 60,
-      offsetY: 0,
+      offsetX: -60
     },
     {
       src: './assets/flags/flag4.png',
-      offsetX: 90,
-      offsetY: 0,
+      offsetX: -90
     },
     {
       src: './assets/flags/flag5.png',
-      offsetX: 120,
-      offsetY: 0,
+      offsetX: -120
     },
     {
       src: './assets/flags/flag6.png',
-      offsetX: 90,
-      offsetY: 0,
+      offsetX: -90
     },
     {
       src: './assets/flags/flag7.png',
-      offsetX: 60,
-      offsetY: 0,
+      offsetX: -60
     },
     {
       src: './assets/flags/flag8.png',
-      offsetX: 30,
-      offsetY: 0,
+      offsetX: -30
     },
     {
       src: './assets/flags/flag9.png',
-      offsetX: 0,
-      offsetY: 0,
+      offsetX: 0
     },
   ]
 
@@ -78,5 +65,26 @@ export class AppComponent {
       this.flagsArr[i].offsetX = temp;
       temp = temp2;
     }
+    if (flagsLength % 2 === 0) {
+      const startIndex = flagsLength / 2;
+      let relativeFlag = startIndex - 1;
+      this.alignFlags(startIndex, relativeFlag);
+      for (let i = 0; i < flagsLength; i++) {
+        this.flagsArr[i].offsetX -= 30;
+      }
+    } else {
+      const startIndex = Math.round(flagsLength / 2);
+      let relativeFlag = startIndex - 2;
+      this.alignFlags(startIndex, relativeFlag);
+    }
   }
+
+  alignFlags(startIndex: number, relativeFlag: number) {
+    const flagsLength = this.flagsArr.length;
+    for (let i = startIndex; i < flagsLength; i++) {
+      this.flagsArr[i].offsetX = this.flagsArr[relativeFlag].offsetX;
+      relativeFlag--;
+    }
+  }
+
 }

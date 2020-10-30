@@ -5,12 +5,12 @@
       class="flag-item" 
       *ngFor="let flag of flagsArr; let i = index" 
       (click)="removeFlag(flag, i)" 
-      [style.transform]="'translate('+flag.offsetX+'px,'+flag.offsetY+'px)'"
+      [style.transform]="'translateX('+flag.offsetX+'px)'"
     >
       <img [src]="flag.src" alt="">
     </li>
   </ul>
-  <!-- <img class="girl-image" src="../assets/main-qimg-cfb4f84252b92a9acf8de09a1bdec1bd.jfif" alt=""> -->
+  <!-- <img class="girl-image" src="../assets/girl.png" alt="smiling girl"> -->
 </div>
 <!-- <fa-icon [icon]="faStar"></fa-icon>
 <fa-icon [icon]="faStar"></fa-icon>
