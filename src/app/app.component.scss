@@ -40,7 +40,7 @@
 }
 
 .girl-image {
-  width: 210px;
+  width: 200px;
   border-radius: 100%;
   z-index: 0;
 }
@@ -56,6 +56,11 @@
 }
 
 .flag-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -18px;
+  margin-top: -20px;
   cursor: pointer;
   & > img {
     width: 36px;

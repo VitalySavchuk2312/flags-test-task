@@ -1,16 +1,14 @@
 <div class="wrap">
   <div class="left">
-    <ul class="flags-list">
-      <li 
+    <div class="girl-image-wrap">
+      <div 
         class="flag-item" 
         *ngFor="let flag of flagsArr; let i = index" 
         (click)="removeFlag(flag, i)" 
-        [style.transform]="'translateX('+flag.offsetX+'px)'"
+        [style.transform]="'rotate(' + flag.offset + 'deg) translate(120px) rotate(' + (-flag.offset) + 'deg)'"
       >
         <img [src]="flag.src" alt="">
-      </li>
-    </ul>
-    <div class="girl-image-wrap">
+      </div>
       <div class="edit-icon-wrap">
         <span class="material-icons edit-icon-left">edit</span>
       </div>
