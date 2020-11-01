@@ -59,7 +59,7 @@ export class AppComponent {
 
   removeFlag(removedFlag) {
     this.flagsArr = this.flagsArr.filter(item => item !== removedFlag);
-    this.startTopPosition -= 10;
+    this.startTopPosition -= 11.2;
     this.alignItems();
   }
 
