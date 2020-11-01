@@ -1,19 +1,44 @@
-<h1>{{heading}}</h1>
 <div class="wrap">
-  <ul class="flags-list">
-    <li 
-      class="flag-item" 
-      *ngFor="let flag of flagsArr; let i = index" 
-      (click)="removeFlag(flag, i)" 
-      [style.transform]="'translateX('+flag.offsetX+'px)'"
-    >
-      <img [src]="flag.src" alt="">
-    </li>
-  </ul>
-  <!-- <img class="girl-image" src="../assets/girl.png" alt="smiling girl"> -->
+  <div class="left">
+    <ul class="flags-list">
+      <li 
+        class="flag-item" 
+        *ngFor="let flag of flagsArr; let i = index" 
+        (click)="removeFlag(flag, i)" 
+        [style.transform]="'translateX('+flag.offsetX+'px)'"
+      >
+        <img [src]="flag.src" alt="">
+      </li>
+    </ul>
+    <div class="girl-image-wrap">
+      <div class="edit-icon-wrap">
+        <span class="material-icons edit-icon-left">edit</span>
+      </div>
+      <img class="girl-image" src="../assets/girl.png" alt="smiling girl">
+    </div>
+  </div>
+  <div class="right">
+    <span class="material-icons edit-icon">edit</span>
+    <h1 class="right-title">
+      {{ heading }} 
+      <span class="material-icons checked-icon">beenhere</span>
+    </h1>
+    <div class="rate-block">
+      <div class="stars-block">
+        <span class="material-icons star-rate">star_rate</span>
+        <span class="material-icons star-rate">star_rate</span>
+        <span class="material-icons star-rate">star_rate</span>
+        <span class="material-icons star-rate">star_rate</span>
+        <span class="material-icons star-rate">star_half</span>
+      </div>
+      <span class="reviews-amount">234 Reviews</span>
+    </div>
+    <p class="profile-description">
+      UI\UX Designer, Web Designer, Mobile App Designer, UI\UX Designer, Web Designer,Mobile App Designer
+    </p>
+    <p class="location">
+      <span class="material-icons location-icon">location_on</span>
+      Lviv, Ukraine
+    </p>
+  </div>
 </div>
-<!-- <fa-icon [icon]="faStar"></fa-icon>
-<fa-icon [icon]="faStar"></fa-icon>
-<fa-icon [icon]="faStar"></fa-icon>
-<fa-icon [icon]="faStar"></fa-icon>
-<fa-icon [icon]="faStarHalf"></fa-icon> -->
